@@ -17,28 +17,25 @@ class App extends Component {
     .then(topspots => this.setState({ topspots }));
   }
 
-  
   render() {
     return (
       <div className='App'>
         <div className = "jumbotron"> 
           <div className = "container text-center">
-           <h1>San Diego Top Spots</h1>
+            <h1>San Diego Top Spots</h1>
             <p>A list of the top 30 places to see in San Diego, California</p>
             <hr className = "my-4"></hr>
-            </div>
+          </div>
         </div>
-      
             
-      {this.state.topspots.map(topspot => (
-        <TopSpot
-            key = {topspot.id}
-            name = {topspot.name}
-            description = {topspot.description}
-            location = {topspot.location} />
-        ))
-        
-      }
+        {this.state.topspots.map(topspot => (
+          <TopSpot
+              key = {topspot.id}
+              name = {topspot.name}
+              description = {topspot.description}
+              location = {topspot.location} />
+          ))
+        }
       </div>
     );
   }
